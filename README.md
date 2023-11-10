@@ -11,7 +11,6 @@ while(1):
     response = requests.get ('https://api.bithumb.com/public/orderbook/BTC_KRW/?count=5')
     book = response.json()
 
-
     data = book['data']
 
     bids = (pd.DataFrame(data['bids'])).apply(pd.to_numeric,errors='ignore')
@@ -42,5 +41,5 @@ while(1):
       else:
         df.to_csv(fn, index=False, header=False, mode = 'a')
     
-    time.sleep(4.9)
+    time.sleep(0.9)
     continue;
